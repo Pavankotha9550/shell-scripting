@@ -7,6 +7,8 @@ if [ $userid -ne 0 ]
 then
     echo "error: not sudo user"
     exit 1
+else
+    echo "running with sudo user"
 fi
 
 dnf install mysqll -y
