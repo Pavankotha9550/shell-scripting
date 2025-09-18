@@ -1,5 +1,7 @@
 #!/bin/bash
-
+#-gt -->greated than
+#-eq-->not equal
+#-ne-->not equal
 Num=$1
 if [Num -lt 10]
 then
