@@ -13,7 +13,7 @@ fi
 
 dnf install mysqll -y
 
-fi [ $? -eq 0 ]
+if [ $? -eq 0 ]
 then
     echo "installation is success"
 else
