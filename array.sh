@@ -1,6 +1,6 @@
 #!/bin/bash
 
-array=("pavan" "Nagendra" "sai")
+array=("pavan" "Nagendra" "sai" "hello")
 
 echo "${array[0]}"
 echo "${array[@]}"
