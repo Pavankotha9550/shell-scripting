@@ -40,4 +40,12 @@ else
     echo "already python3 installed"
 fi
 
-
+dnf list installed nginx
+if [ $? -ne 0 ]
+then
+    echo "not installed python3 going to install now"
+    dnf install nginx -y
+    VALIDATE $? nginx
+else
+    echo "already nginx installed"
+fi
