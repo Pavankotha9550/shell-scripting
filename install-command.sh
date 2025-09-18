@@ -11,6 +11,12 @@ else
     echo "running with sudo user"
 fi
 
+dnf list installed mysql
+if [ $? -eq 0 ]
+then
+    echo "already installed"
+else
+    echo "not installed going to install now"
 dnf install mysql -y
 
 if [ $? -eq 0 ]
