@@ -23,11 +23,21 @@ VALIDATE()
 dnf list installed mysql
 if [ $? -ne 0 ]
 then
-    echo "not installed going to install now"
+    echo "not installed mysql going to install now"
     dnf install mysql -y
     VALIDATE $? mysql
 else
-    echo "already installed"
+    echo "already mysql installed"
+fi
+
+dnf list installed python3
+if [ $? -ne 0 ]
+then
+    echo "not installed python3 going to install now"
+    dnf install python3 -y
+    VALIDATE $? python3
+else
+    echo "already python3 installed"
 fi
 
 
