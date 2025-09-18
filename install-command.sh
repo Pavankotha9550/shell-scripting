@@ -10,21 +10,22 @@ then
 else
     echo "running with sudo user"
 fi
-
+VALIDATE()
+{
+     if [ $1 -eq 0 ]
+    then
+        echo "installation $2 is success"
+    else
+        echo "error: installation $2 failed"
+        exit 1
+    fi
+}
 dnf list installed mysql
 if [ $? -ne 0 ]
 then
     echo "not installed going to install now"
     dnf install mysql -y
-
-    if [ $? -eq 0 ]
-    then
-        echo "installation is success"
-    else
-        echo "error: installation failed"
-        exit 1
-    fi
-    
+    VALIDATE $? mysql
 else
     echo "already installed"
 fi
