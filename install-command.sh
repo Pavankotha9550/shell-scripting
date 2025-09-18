@@ -1,6 +1,6 @@
 #!/bin/bash
 
-userid=$[id -u]
+userid=$(id -u)
 
 echo "userid:$userid"
 if [ $userid -ne 0 ] 
