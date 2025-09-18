@@ -17,6 +17,8 @@ then
     echo "already installed"
 else
     echo "not installed going to install now"
+fi
+    
 dnf install mysql -y
 
 if [ $? -eq 0 ]
