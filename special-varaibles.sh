@@ -9,3 +9,6 @@ echo "user home directiory who is running the script: $HOME"
 echo "PID of the script: $$"
 sleep 10 &
 echo "PID running in the background: $!"
+echo "user id of root user:"sudo id
+echo "for user id: "id
+echo "to know user id by command:" id-u
