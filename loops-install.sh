@@ -42,7 +42,7 @@ do
     dnf list installed $packages &>>$log_file
     if [ $? -ne 0 ]
     then
-        echo -e "not installed $packages going to install now" | tee -a $log_file
+        echo -e "$Y not installed $packages going to install now $W" | tee -a $log_file
         dnf install $packages -y &>>$log_file
         VALIDATE $? $packages
     else
