@@ -7,6 +7,8 @@ G="\e[32m"
 y="\e[33m"
 W="\e[0m"
 
+echo "script started executed at $(date)"
+
 log_folder="var/log/shell-scripting-logs"
 script_name=$(echo $0 | cut -d "." -f1)
 log_file=$log_folder/$script_name.log
