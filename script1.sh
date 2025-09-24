@@ -2,4 +2,4 @@
 
 echo "hello world"
 echo "$(pwd)"
-echo "$($$)"
+echo "($$)"
