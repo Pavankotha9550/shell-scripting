@@ -39,7 +39,7 @@ if [ -n "$files" ] #-n means "non-empty string" we acn als use -z represent "emp
         done <<<$files
         zip_file="$dest_dir/$(date +%F-%H-%M-%S).zip"
         find "$source_dir" -name "*.log" -mtime +$days | zip -@ "$zip_file" # @ here means taking stdin to zip
-        if [ f- $zip_file ]
+        if [ -f $zip_file ]
             then
                 while IFS=read -r filename
                 do
