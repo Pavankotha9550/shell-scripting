@@ -13,8 +13,23 @@ mkdir -p destination
 dest_dir="/home/ec2-user/destination"
 days=$1
 
+USAGE(){
+    echo -e " USAGE:: sh zipping-files.sh  <days> was the formate"
+    exit 1
+}
+
+if [ $# -lt 1 ]
+then
+    USAGE
+fi
+
+if ! [[ "$1" =~ ^[0-9]+$ ]]
+then
+    echo "must be a number bro!"
+fi
+
 files=$(find $source_dir -name "*.log" -mtime +$days)
-if [ -n "$files" ] #-n means "non-empty string" we acn als use -z represent "if not empty"
+if [ -n "$files" ] #-n means "non-empty string" we acn als use -z represent "empty"
     then
         
         while IFS= read -r filename
