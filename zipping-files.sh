@@ -1,5 +1,12 @@
 #!/bin/bash
 
+set -e
+failure()
+{
+    echo "failed at: $1 $2" 
+}
+
+trap 'failure "${LINENO}" "${BASH_COMMAND}"' ERR
 source_dir="/home/ec2-user"
 mkdir -p destination
 dest_dir="/home/ec2-user/destination"
