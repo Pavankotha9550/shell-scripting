@@ -43,8 +43,8 @@ if [ -n "$files" ] #-n means "non-empty string" we acn als use -z represent "emp
             then
                 while IFS= read -r filename
                 do
-                    echo "Deleting file: $filepath" | tee -a $LOG_FILE
-                    rm -rf $filepath
+                    echo "Deleting file: $filename" | tee -a $LOG_FILE
+                    rm -rf $filename
                 done <<<$files
                 echo "deleting files are done"
             else
