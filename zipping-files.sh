@@ -23,7 +23,7 @@ then
     USAGE
 fi
 
-if ! [[ "$1" =~ ^[0-9]+$ ]]
+if ! [[ "$1" =~ ^[0-9]+$ ]] # checking was it a number or not
 then
     echo " 1st argument should must be a number bro!"
     exit 1
