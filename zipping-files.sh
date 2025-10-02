@@ -14,7 +14,7 @@ dest_dir="/home/ec2-user/destination"
 days=$1
 
 files=$(find $source_dir -name "*.log" -mtime +$days)
-if [ -n ""files ]
+if [ -n "$files" ]
     then
         
         while IFS= read -r filename
@@ -22,7 +22,7 @@ if [ -n ""files ]
             echo "files we got from the find are:$filename"
         done <<<$files
     else
-        echo "no file are there for $days days"
+        echo "no file are there for $days +days"
         exit 0
 
 fi
