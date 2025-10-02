@@ -8,4 +8,4 @@ days=$1
 files=$(find $source_dir -name "*.log" -mtime +$days)
 
 zip_file=$dest_dir/$(date +%F-%h-%m-%s).zip
-find $source_dir -name "*.log" -mtime +$days | zip -@ $zip_file
+find "$source_dir" -name "*.log" -mtime +$days | zip -@ "$zip_file"
