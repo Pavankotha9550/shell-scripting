@@ -19,7 +19,7 @@ if [ -n ""files ]
         
         while IFS= read -r filename
         do
-            echo echo "files we got from the find are:$filename"
+            echo "files we got from the find are:$filename"
         done <<<$files
     else
         echo "no file are there for $days days"
