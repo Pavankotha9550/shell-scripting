@@ -25,7 +25,7 @@ fi
 
 if ! [[ "$1" =~ ^[0-9]+$ ]]
 then
-    echo "must be a number bro!"
+    echo " 1st argument should must be a number bro!"
     exit 1
 fi
 
