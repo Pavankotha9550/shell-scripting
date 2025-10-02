@@ -41,7 +41,7 @@ if [ -n "$files" ] #-n means "non-empty string" we acn als use -z represent "emp
         find "$source_dir" -name "*.log" -mtime +$days | zip -@ "$zip_file" # @ here means taking stdin to zip
         if [ -f $zip_file ]
             then
-                while IFS=read -r filename
+                while IFS= read -r filename
                 do
                     echo "Deleting file: $filepath" | tee -a $LOG_FILE
                     rm -rf $filepath
