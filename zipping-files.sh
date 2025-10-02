@@ -16,10 +16,10 @@ days=$1
 files=$(find $source_dir -name "*.log" -mtime +$days)
 if [ -n ""files ]
     then
-        echo "files we got from the find are:"
+        
         while IFS= read -r filename
         do
-            echo $filename
+            echo echo "files we got from the find are:$filename"
         done <<<$files
     else
         echo "no file are there for $days days"
