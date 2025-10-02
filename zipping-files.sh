@@ -26,6 +26,7 @@ fi
 if ! [[ "$1" =~ ^[0-9]+$ ]]
 then
     echo "must be a number bro!"
+    exit 1
 fi
 
 files=$(find $source_dir -name "*.log" -mtime +$days)
