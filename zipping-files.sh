@@ -14,7 +14,7 @@ dest_dir="/home/ec2-user/destination"
 days=$1
 
 files=$(find $source_dir -name "*.log" -mtime +$days)
-if [ -n "$files" ]
+if [ -n "$files" ] #-n means "non-empty string" we acn als use -z represent "if not empty"
     then
         
         while IFS= read -r filename
@@ -28,4 +28,4 @@ if [ -n "$files" ]
 fi
 
 zip_file="$dest_dir/$(date +%F-%H-%M-%S).zip"
-find "$source_dir" -name "*.log" -mtime +$days | zip -@ "$zip_file"
+find "$source_dir" -name "*.log" -mtime +$days | zip -@ "$zip_file" # @ here means taking stdin to zip
