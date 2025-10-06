@@ -43,7 +43,7 @@ then
                 while IFS= read -r filename
                 do
                     echo "Deleting file: $filename" | tee -a $LOG_FILE
-                    rm -rf $filename
+                    sudo rm -rf $filename
                 done <<<$files
                 echo "deleting files are done"
             else
