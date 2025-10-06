@@ -31,10 +31,9 @@ fi
 
 files=$(find $source_dir -name "*.log" -mtime +$days)
 if [ -n "$files" ] #-n means "non-empty string" we acn als use -z represent "empty"
-    then
-        
+then
         while IFS= read -r filename
-            do
+        do
                 echo "files we got from the find are:$filename"
         done <<<$files
         zip_file="$dest_dir/$(date +%F-%H-%M-%S).zip"
@@ -51,8 +50,8 @@ if [ -n "$files" ] #-n means "non-empty string" we acn als use -z represent "emp
                 echo "zip creation failure"
                 exit 1
         fi
-    else
-        echo "no file are there for $days +days"
-        exit 0
+else
+    echo "no file are there for $days +days"
+    exit 0
 fi
 
